@@ -731,10 +731,14 @@ select.form-control:not([size]):not([multiple]) {
   border: none;
   position: relative;
   margin-bottom: 30px;
+  width: auto;
+  /* max-width: 100%; */
 }
 .card .card-header, .card .card-body, .card .card-footer {
   background-color: transparent;
   padding: 20px 25px;
+  width: auto;
+  /* max-width: 100%; */
 }
 .card .navbar {
   position: static;
@@ -787,7 +791,7 @@ select.form-control:not([size]):not([multiple]) {
 .card .card-header h4 {
   font-size: 16px;
   line-height: 28px;
-  color: #6777ef;
+  color: #DC143C;
   padding-right: 10px;
   margin-bottom: 0;
 }
@@ -1888,7 +1892,7 @@ h6 .badge {
   left: 0;
   width: 100%;
   height: 115px;
-  background-color: #6777ef;
+  background-color: #DC143C;
   z-index: -1;
 }
 
@@ -2912,7 +2916,7 @@ pre {
   border-radius: 5px;
   height: 8px;
   width: 30px;
-  background-color: #6777ef;
+  background-color: #FD2D00;
   display: inline-block;
   float: left;
   margin-top: 6px;
