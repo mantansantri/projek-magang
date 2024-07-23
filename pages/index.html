@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Ecommerce Dashboard &mdash; Stisla</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="../node_modules/jqvmap/dist/jqvmap.min.css">
+  <link rel="stylesheet" href="../node_modules/summernote/dist/summernote-bs4.css">
+  <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
+                  class="fas fa-search"></i></a></li>
+          </ul>
+          <div class="search-element">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
+            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+            <div class="search-backdrop"></div>
+            <div class="search-result">
+              <div class="search-header">
+                Histories
+              </div>
+              <div class="search-item">
+                <a href="#">How to hack NASA using CSS</a>
+                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+              </div>
+              <div class="search-item">
+                <a href="#">Kodinger.com</a>
+                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+              </div>
+              <div class="search-item">
+                <a href="#">#Stisla</a>
+                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+              </div>
+            </div>
+          </div>
+        </form>
+        <ul class="navbar-nav navbar-right">
+          <li class="dropdown"><a href="#" data-toggle="dropdown"
+              class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+              <img alt="image" src="../assets/img/avatar/avatar-5.png" class="rounded-circle mr-1">
+              <div class="d-sm-none d-lg-inline-block">User</div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <div class="dropdown-title">Logged in 5 min ago</div>
+              <a href="features-profile.html" class="dropdown-item has-icon">
+                <i class="far fa-user"></i> Profile
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html">User Page</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="index.html">UP</a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
+              <a href="index-0.html" class="nav-link"><i class="fas fa-fire"></i><span>Tasks</span></a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card card-statistic-2">
+                <div class="card-chart">
+                  <canvas id="balance-chart" height="80"></canvas>
+                </div>
+                <div class="card-icon shadow-danger bg-danger">
+                  <i class="fas fa-times"></i>
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Uncompleted</h4>
+                  </div>
+                  <div class="card-body">
+                    20%
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card card-statistic-2">
+                <div class="card-chart">
+                  <canvas id="balance-chart" height="80"></canvas>
+                </div>
+                <div class="card-icon shadow-warning bg-warning">
+                  <i class="fas fa-stopwatch"></i>
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Process</h4>
+                  </div>
+                  <div class="card-body">
+                    20%
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card card-statistic-2">
+                <div class="card-chart">
+                  <canvas id="sales-chart" height="80"></canvas>
+                </div>
+                <div class="card-icon shadow-success bg-success">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Done</h4>
+                  </div>
+                  <div class="card-body">
+                    20%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- <div class="row"> -->
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Tasks</h4>
+                    <div class="card-header-form">
+                      <form>
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Search">
+                          <div class="input-group-btn">
+                            <button class="btn btn-danger"><i class="fas fa-search"></i></button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <tr>
+                          <th>
+                            <div class="custom-checkbox custom-control">
+                              <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
+                                class="custom-control-input" id="checkbox-all">
+                              <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
+                            </div>
+                          </th>
+                          <th>Task Name</th>
+                          <th>Due Date</th>
+                          <th>Category</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                        <tr>
+                          <td class="p-0 text-center">
+                            <div class="custom-checkbox custom-control">
+                              <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                id="checkbox-1">
+                              <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
+                            </div>
+                          </td>
+                          <td>Create a mobile app</td>
+                          <td>2018-01-20</td>
+                          <td>Lorem Ipsum</td>
+                          <td>
+                            <div class="badge badge-success">Done</div>
+                          </td>
+                          <td><a href="#" class="btn btn-danger">Detail</a></td>
+                        </tr>
+                        <tr>
+                          <td class="p-0 text-center">
+                            <div class="custom-checkbox custom-control">
+                              <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                id="checkbox-2">
+                              <label for="checkbox-2" class="custom-control-label">&nbsp;</label>
+                            </div>
+                          </td>
+                          <td>Redesign homepage</td>
+
+                          <td>2018-04-10</td>
+                          <td>Lorem Ipsum</td>
+                          <td>
+                            <div class="badge badge-danger">Uncompleted</div>
+                          </td>
+                          <td><a href="#" class="btn btn-danger">Detail</a></td>
+                        </tr>
+                        <tr>
+                          <td class="p-0 text-center">
+                            <div class="custom-checkbox custom-control">
+                              <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                id="checkbox-3">
+                              <label for="checkbox-3" class="custom-control-label">&nbsp;</label>
+                            </div>
+                          </td>
+                          <td>Backup database</td>
+
+                          <td>2018-01-29</td>
+                          <td>Lorem Ipsum</td>
+                          <td>
+                            <div class="badge badge-warning">Process</div>
+                          </td>
+                          <td><a href="#" class="btn btn-danger">Detail</a></td>
+                        </tr>
+                        <tr>
+                          <td class="p-0 text-center">
+                            <div class="custom-checkbox custom-control">
+                              <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                id="checkbox-4">
+                              <label for="checkbox-4" class="custom-control-label">&nbsp;</label>
+                            </div>
+                          </td>
+                          <td>Input data</td>
+
+                          <td>2018-01-16</td>
+                          <td>Lorem Ipsum</td>
+                          <td>
+                            <div class="badge badge-success">Done</div>
+                          </td>
+                          <td><a href="#" class="btn btn-danger">Detail</a></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- </div> -->
+          </div>
+        </section>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauv.al/">Muhamad Nauval Azhar</a>
+        </div>
+        <div class="footer-right">
+          2.3.0
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="../assets/js/stisla.js"></script>
+
+  <!-- JS Libraies -->
+  <script src="../node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+  <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
+  <script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+
+  <!-- Template JS File -->
+  <script src="../assets/js/scripts.js"></script>
+  <script src="../assets/js/custom.js"></script>
+
+  <!-- Page Specific JS File -->
+  <script src="../assets/js/page/index.js"></script>
+</body>
+
+</html>
