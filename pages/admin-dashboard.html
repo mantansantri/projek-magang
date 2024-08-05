@@ -133,6 +133,120 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <div class="card card-statistic-1">
+                <div class="card-icon bg-success">
+                  <i class="far fa-user"></i>
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Bravo</h4>
+                  </div>
+                  <div class="card-body">
+                    10
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <div class="card card-statistic-1">
+                <div class="card-icon bg-danger">
+                  <i class="far fa-user"></i>
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Defa</h4>
+                  </div>
+                  <div class="card-body">
+                    42
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <div class="card card-statistic-1">
+                <div class="card-icon" style="background-color: black;">
+                  <i class="far fa-user"></i>
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Iota</h4>
+                  </div>
+                  <div class="card-body">
+                    20
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <div class="card card-statistic-1">
+                <div class="card-icon bg-info">
+                  <i class="far fa-user"></i>
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Romeo</h4>
+                  </div>
+                  <div class="card-body">
+                    47
+                  </div>
+                </div>
+              </div>
+            </div>                  
+          </div>
+          <div class="row">
+            <div class="col-lg-8">
+              <div id="chartContainer" style="width: auto;"></div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card gradient-bottom">
+                <div class="card-header">
+                  <h4>Top Uncompleted Task</h4>
+                </div>
+                <div class="card-body" id="top-5-scroll" style="height: 315px; overflow: hidden; outline: none;" tabindex="2">
+                  <ul class="list-unstyled list-unstyled-border">
+                    <li class="media">
+                      <div class="media-body">
+                        <div class="media-title">Lorem Ipsum</div>
+                      </div>
+                    </li>
+                    <li class="media">
+                      <div class="media-body">
+                        <div class="media-title">Lorem Ipsum</div>
+                      </div>
+                    </li>
+                    <li class="media">
+                      <div class="media-body">
+                        <div class="media-title">Lorem Ipsum</div>
+                      </div>
+                    </li>
+                    <li class="media">
+                      <div class="media-body">
+                        <div class="media-title">Lorem Ipsum</div>
+                      </div>
+                    </li>
+                    <li class="media">
+                      <div class="media-body">
+                        <div class="media-title">Lorem Ipsum</div>
+                      </div>
+                    </li>
+                    <li class="media">
+                      <div class="media-body">
+                        <div class="media-title">Lorem Ipsum</div>
+                      </div>
+                    </li>
+                    <li class="media">
+                      <div class="media-body">
+                        <div class="media-title">Lorem Ipsum</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div id="chartContainer" style="width: auto;"></div> -->
         </section>
       </div>
       <footer class="main-footer">
@@ -166,6 +280,29 @@
   <script src="../assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
+  <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+  <script type="text/javascript">
+  
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer", {
+      title:{
+        text: "Completed vs Uncompleted"              
+      },
+      data: [              
+      {
+        // Change type to "doughnut", "line", "splineArea", etc.
+        type: "doughnut",
+        dataPoints: [
+          { label: "Compeletd",  y: 40  },
+          { label: "Uncompleted", y: 50  }
+        ]
+      }
+      ]
+    });
+    chart.render();
+  }
+  </script>
+  
 </body>
 
 </html>
