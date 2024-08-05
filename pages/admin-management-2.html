@@ -87,6 +87,7 @@
             <li class="nav-item">
               <a href="admin-dashboard.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
               <a href="admin-tasks.html" class="nav-link"><i class="fas fa-fire"></i><span>Tasks</span></a>
+              <a href="admin-teams.html" class="nav-link"><i class="fas fa-user"></i><span>Team</span></a>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Management</span></a>
                 <ul class="dropdown-menu">
@@ -104,7 +105,7 @@
         <div class="card mt-4">
           <div class="card-header">
             <h4>Categories</h4>
-            <a href="#" class="btn btn-danger" style="margin-left: auto;">Create Category</a>
+            <a href="#" class="btn btn-danger" style="margin-left: auto;" data-toggle="modal" data-target="#addModal">Create Category</a>
           </div>
           <div class="card-body">
             <ul class="list-unstyled user-details list-unstyled-border list-unstyled-noborder">
@@ -114,7 +115,9 @@
                 </div>
                 <div class="media-items">
                   <div class="media-item">
-                    <a href="#" class="btn btn-danger col-sm-12">Delete Category</a>
+                    <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                    <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                    <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
                   </div>
                 </div>
               </li>
@@ -124,7 +127,9 @@
                 </div>
                 <div class="media-items">
                   <div class="media-item">
-                    <a href="#" class="btn btn-danger col-sm-12">Delete Category</a>
+                    <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                    <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                    <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
                   </div>
                 </div>
               </li>
@@ -134,7 +139,9 @@
                 </div>
                 <div class="media-items">
                   <div class="media-item">
-                    <a href="#" class="btn btn-danger col-sm-12">Delete Category</a>
+                    <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                    <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                    <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
                   </div>
                 </div>
               </li>
@@ -144,7 +151,9 @@
                 </div>
                 <div class="media-items">
                   <div class="media-item">
-                    <a href="#" class="btn btn-danger col-sm-12">Delete Category</a>
+                    <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                    <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                    <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
                   </div>
                 </div>
               </li>
@@ -154,13 +163,95 @@
                 </div>
                 <div class="media-items">
                   <div class="media-item">
-                    <a href="#" class="btn btn-danger col-sm-12">Delete Category</a>
+                    <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                    <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                    <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
                   </div>
                 </div>
               </li>
             </ul>
           </div>
         </div>
+        <!-- add modal -->
+      <div id="addModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add Categories</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Categories</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end add modal -->
+
+      <!-- delete modal -->
+      <div id="deleteModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Delete</h4>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end delete modal -->
+
+      <!-- add modal -->
+      <div id="editModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Categories</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Categories</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end edit modal -->
+
+      <!-- show modal -->
+      <div id="showModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Show Cetagories</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Categories</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end show modal -->
       </div>
       <footer class="main-footer">
         <div class="footer-left">

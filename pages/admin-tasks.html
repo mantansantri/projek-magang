@@ -87,13 +87,14 @@
             <li class="nav-item">
               <a href="admin-dashboard.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
               <a href="admin-tasks.html" class="nav-link"><i class="fas fa-fire"></i><span>Tasks</span></a>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Management</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="admin-management-1.html">User</a></li>
-                  <li><a class="nav-link" href="admin-management-2.html">Categories</a></li>
-                </ul>
-              </li>
+              <a href="admin-teams.html" class="nav-link"><i class="fas fa-user"></i><span>Team</span></a>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Management</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="admin-management-1.html">User</a></li>
+                <li><a class="nav-link" href="admin-management-2.html">Categories</a></li>
+              </ul>
+            </li>
             </li>
           </ul>
         </aside>
@@ -102,182 +103,317 @@
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                  <div class="card card-statistic-2">
-                    <div class="card-chart">
-                      <canvas id="balance-chart" height="80"></canvas>
-                    </div>
-                    <div class="card-icon shadow-danger bg-danger">
-                      <i class="fas fa-times"></i>
-                    </div>
-                    <div class="card-wrap">
-                      <div class="card-header">
-                        <h4>Uncompleted</h4>
-                      </div>
-                      <div class="card-body">
-                        20%
-                      </div>
-                    </div>
-                  </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card card-statistic-2">
+                <div class="card-chart">
+                  <canvas id="balance-chart" height="80"></canvas>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                  <div class="card card-statistic-2">
-                    <div class="card-chart">
-                      <canvas id="balance-chart" height="80"></canvas>
-                    </div>
-                    <div class="card-icon shadow-warning bg-warning">
-                      <i class="fas fa-stopwatch"></i>
-                    </div>
-                    <div class="card-wrap">
-                      <div class="card-header">
-                        <h4>Process</h4>
-                      </div>
-                      <div class="card-body">
-                        20%
-                      </div>
-                    </div>
-                  </div>
+                <div class="card-icon shadow-danger bg-danger">
+                  <i class="fas fa-times"></i>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                  <div class="card card-statistic-2">
-                    <div class="card-chart">
-                      <canvas id="sales-chart" height="80"></canvas>
-                    </div>
-                    <div class="card-icon shadow-success bg-success">
-                      <i class="fas fa-check"></i>
-                    </div>
-                    <div class="card-wrap">
-                      <div class="card-header">
-                        <h4>Done</h4>
-                      </div>
-                      <div class="card-body">
-                        20%
-                      </div>
-                    </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Uncompleted</h4>
+                  </div>
+                  <div class="card-body">
+                    20%
                   </div>
                 </div>
               </div>
-            <div class="row">
-              <!-- <div class="row"> -->
-                <div class="col-12">
-                  <div class="card">
-                    <div class="card-header">
-                      <h4>Tasks</h4>
-                      <div class="card-header-form">
-                        <form>
-                          <div class="input-group">
-                            <td><a href="#" class="btn btn-danger mr-3">Add Task</a></td>
-                            <input type="text" class="form-control" placeholder="Search">
-                            <div class="input-group-btn">
-                              <button class="btn btn-danger"><i class="fas fa-search"></i></button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                    <div class="card-body p-0">
-                      <div class="table-responsive">
-                        <table class="table table-striped">
-                          <tr>
-                            <th>
-                              <div class="custom-checkbox custom-control">
-                                <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
-                                  class="custom-control-input" id="checkbox-all">
-                                <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
-                              </div>
-                            </th>
-                            <th>Task Name</th>
-                            <th>Due Date</th>
-                            <th>Category</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                          </tr>
-                          <tr>
-                            <td class="p-0 text-center">
-                              <div class="custom-checkbox custom-control">
-                                <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                  id="checkbox-1">
-                                <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
-                              </div>
-                            </td>
-                            <td>Create a mobile app</td>
-                            <td>2018-01-20</td>
-                            <td>Lorem Ipsum</td>
-                            <td>
-                              <div class="badge badge-success">Done</div>
-                            </td>
-                            <td><a href="#" class="btn btn-danger">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td class="p-0 text-center">
-                              <div class="custom-checkbox custom-control">
-                                <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                  id="checkbox-2">
-                                <label for="checkbox-2" class="custom-control-label">&nbsp;</label>
-                              </div>
-                            </td>
-                            <td>Redesign homepage</td>
-  
-                            <td>2018-04-10</td>
-                            <td>Lorem Ipsum</td>
-                            <td>
-                              <div class="badge badge-danger">Uncompleted</div>
-                            </td>
-                            <td><a href="#" class="btn btn-danger">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td class="p-0 text-center">
-                              <div class="custom-checkbox custom-control">
-                                <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                  id="checkbox-3">
-                                <label for="checkbox-3" class="custom-control-label">&nbsp;</label>
-                              </div>
-                            </td>
-                            <td>Backup database</td>
-  
-                            <td>2018-01-29</td>
-                            <td>Lorem Ipsum</td>
-                            <td>
-                              <div class="badge badge-warning">Process</div>
-                            </td>
-                            <td><a href="#" class="btn btn-danger">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td class="p-0 text-center">
-                              <div class="custom-checkbox custom-control">
-                                <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                  id="checkbox-4">
-                                <label for="checkbox-4" class="custom-control-label">&nbsp;</label>
-                              </div>
-                            </td>
-                            <td>Input data</td>
-  
-                            <td>2018-01-16</td>
-                            <td>Lorem Ipsum</td>
-                            <td>
-                              <div class="badge badge-success">Done</div>
-                            </td>
-                            <td><a href="#" class="btn btn-danger">Detail</a></td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card card-statistic-2">
+                <div class="card-chart">
+                  <canvas id="balance-chart" height="80"></canvas>
+                </div>
+                <div class="card-icon shadow-warning bg-warning">
+                  <i class="fas fa-stopwatch"></i>
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Process</h4>
+                  </div>
+                  <div class="card-body">
+                    20%
                   </div>
                 </div>
-              <!-- </div> -->
+              </div>
             </div>
-          </section>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card card-statistic-2">
+                <div class="card-chart">
+                  <canvas id="sales-chart" height="80"></canvas>
+                </div>
+                <div class="card-icon shadow-success bg-success">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Done</h4>
+                  </div>
+                  <div class="card-body">
+                    20%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- <div class="row"> -->
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Tasks</h4>
+                  <div class="card-header-form">
+                    <form>
+                      <div class="input-group">
+                        <td>
+                          <button type="button" class="btn btn-danger mr-3" data-toggle="modal" data-target="#addModal">Add Task</button>
+                        </td>
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                          <button class="btn btn-danger"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <tr>
+                        <th>
+                          <div class="custom-checkbox custom-control">
+                            <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
+                              class="custom-control-input" id="checkbox-all">
+                            <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
+                          </div>
+                        </th>
+                        <th>Task Name</th>
+                        <th>Due Date</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                      <tr>
+                        <td class="p-0 text-center">
+                          <div class="custom-checkbox custom-control">
+                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                              id="checkbox-1">
+                            <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
+                          </div>
+                        </td>
+                        <td>Create a mobile app</td>
+                        <td>2018-01-20</td>
+                        <td>Lorem Ipsum</td>
+                        <td>
+                          <div class="badge badge-success">Done</div>
+                        </td>
+                        <td>
+                          <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                          <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                          <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-0 text-center">
+                          <div class="custom-checkbox custom-control">
+                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                              id="checkbox-2">
+                            <label for="checkbox-2" class="custom-control-label">&nbsp;</label>
+                          </div>
+                        </td>
+                        <td>Redesign homepage</td>
+
+                        <td>2018-04-10</td>
+                        <td>Lorem Ipsum</td>
+                        <td>
+                          <div class="badge badge-danger">Uncompleted</div>
+                        </td>
+                        <td>
+                          <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                          <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                          <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-0 text-center">
+                          <div class="custom-checkbox custom-control">
+                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                              id="checkbox-3">
+                            <label for="checkbox-3" class="custom-control-label">&nbsp;</label>
+                          </div>
+                        </td>
+                        <td>Backup database</td>
+
+                        <td>2018-01-29</td>
+                        <td>Lorem Ipsum</td>
+                        <td>
+                          <div class="badge badge-warning">Process</div>
+                        </td>
+                        <td>
+                          <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                          <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                          <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-0 text-center">
+                          <div class="custom-checkbox custom-control">
+                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                              id="checkbox-4">
+                            <label for="checkbox-4" class="custom-control-label">&nbsp;</label>
+                          </div>
+                        </td>
+                        <td>Input data</td>
+
+                        <td>2018-01-16</td>
+                        <td>Lorem Ipsum</td>
+                        <td>
+                          <div class="badge badge-success">Done</div>
+                        </td>
+                        <td>
+                          <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                          <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                          <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
       </div>
-      <footer class="main-footer">
-        <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauv.al/">Muhamad Nauval Azhar</a>
+      </section>
+      <!-- add modal -->
+      <div id="addModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add Task</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Task Name</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Due Date</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Category</label>
+                <select class="form-control">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
         </div>
-        <div class="footer-right">
-          2.3.0
+      </div>
+      <!-- end add modal -->
+
+      <!-- delete modal -->
+      <div id="deleteModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Delete</h4>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
         </div>
-      </footer>
+      </div>
+      <!-- end delete modal -->
+
+      <!-- add modal -->
+      <div id="editModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Task</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Task Name</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Due Date</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Category</label>
+                <select class="form-control">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end edit modal -->
+
+      <!-- show modal -->
+      <div id="showModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Show Task</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Task Name</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Due Date</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Category</label>
+                <select class="form-control">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end show modal -->
     </div>
+    <footer class="main-footer">
+      <div class="footer-left">
+        Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauv.al/">Muhamad Nauval Azhar</a>
+      </div>
+      <div class="footer-right">
+        2.3.0
+      </div>
+    </footer>
+  </div>
   </div>
 
   <!-- General JS Scripts -->
@@ -293,13 +429,14 @@
   <script src="../assets/js/stisla.js"></script>
 
   <!-- JS Libraies -->
-  <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
+  <script src="../node_modules/prismjs/prism.js"></script>
 
   <!-- Template JS File -->
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
+  <script src="../assets/js/page/bootstrap-modal.js"></script>
 </body>
 
 </html>

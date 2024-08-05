@@ -67,7 +67,7 @@
                 <i class="far fa-user"></i> Profile
               </a>
               <div class="dropdown-divider"></div>
-              <a href="landing.html" class="dropdown-item has-icon text-danger">
+              <a href="#" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
             </div>
@@ -87,13 +87,14 @@
             <li class="nav-item">
               <a href="admin-dashboard.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
               <a href="admin-tasks.html" class="nav-link"><i class="fas fa-fire"></i><span>Tasks</span></a>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Management</span></a>
-                <ul class="dropdown-menu">
-                 <li><a class="nav-link" href="admin-management-1.html">User</a></li>
-                  <li><a class="nav-link" href="admin-management-2.html">Categories</a></li>
-                </ul>
-              </li>
+              <a href="admin-teams.html" class="nav-link"><i class="fas fa-user"></i><span>Teams</span></a>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Management</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="admin-management-1.html">User</a></li>
+                <li><a class="nav-link" href="admin-management-2.html">Categories</a></li>
+              </ul>
+            </li>
             </li>
           </ul>
         </aside>
@@ -103,104 +104,253 @@
       <div class="main-content">
         <div class="card mt-4">
           <div class="card-header">
-            <h4>Users</h4>
+            <h4>Teams</h4>
+            <div class="card-header-form">
+              <form>
+                <div class="input-group">
+                  <button class="btn btn-danger dropdown-toggle mr-3" type="button" data-toggle="dropdown">
+                    Filter
+                  </button>
+                  <button class="btn btn-danger mr-3" type="button" data-toggle="modal" data-target="#addModal">
+                    Add User
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Bravo</a>
+                    <a class="dropdown-item" href="#">Defa</a>
+                    <a class="dropdown-item" href="#">Iota</a>
+                    <a class="dropdown-item" href="#">Romeo</a>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Search">
+                  <div class="input-group-btn">
+                    <button class="btn btn-danger"><i class="fas fa-search"></i></button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="card-body">
-            <ul class="list-unstyled user-details list-unstyled-border list-unstyled-noborder">
-              <li class="media">
-                <img alt="image" class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-1.png">
-                <div class="media-body">
-                  <div class="media-title">Rizal Fakhri</div>
-                  <div class="text-job text-muted">Network Engineer</div>
-                </div>
+          <table class="table">
+            <tr>
+              <th>User</th>
+              <th>Location</th>
+              <th>Team</th>
+              <th>Performance</th>
+              <th>Action</th>
+            </tr>
+            <tr style="padding: 10px;">
+              <td>
+                <li class="media">
+                  <img alt="image" class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-1.png">
+                  <div class="media-body">
+                    <div class="media-title" style="position: relative;">Rizal Fakhri</div>
+                  </div>
+                </li>
+              </td>
+              <td>Papua</td>
+              <td>
                 <div class="badge badge-success mr-3">Bravo</div>
-                <div class="media-items">
-                  <div class="media-item">
-                    <div class="media-value">90%</div>
-                    <div class="media-label">Performance</div>
+              </td>
+              <td>90%</td>
+              <td>
+                <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
+              </td>
+            </tr>
+            <tr style="padding: 10px;">
+              <td>
+                <li class="media">
+                  <img alt="image" class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-1.png">
+                  <div class="media-body">
+                    <div class="media-title" style="position: relative;">Rusdi Ngawi</div>
                   </div>
-                  <div class="media-item">
-                    <div class="media-value">3</div>
-                    <div class="media-label">Tasks</div>
+                </li>
+              </td>
+              <td>Ngawi</td>
+              <td>
+                <div class="badge badge-danger mr-3">Defa</div>
+              </td>
+              <td>80%</td>
+              <td>
+                <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
+              </td>
+            </tr>
+            <tr style="padding: 10px;">
+              <td>
+                <li class="media">
+                  <img alt="image" class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-1.png">
+                  <div class="media-body">
+                    <div class="media-title" style="position: relative;">Maul Lana</div>
                   </div>
-                </div>
-              </li>
-              <li class="media">
-                <img alt="image" class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-5.png">
-                <div class="media-body">
-                  <div class="media-title">Irwansyah Saputra</div>
-                  <div class="text-job text-muted">Network Engineer</div>
-                </div>
-                <div class="badge badge-success mr-3">Deva</div>
-                <div class="media-items">
-                  <div class="media-item">
-                    <div class="media-value">67%</div>
-                    <div class="media-label">Performance</div>
+                </li>
+              </td>
+              <td>Jakarta</td>
+              <td>
+                <div class="badge mr-3" style="background-color: black; color: white;">Iota</div>
+              </td>
+              <td>56%</td>
+              <td>
+                <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
+              </td>
+            </tr>
+            <tr style="padding: 10px;">
+              <td>
+                <li class="media">
+                  <img alt="image" class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-1.png">
+                  <div class="media-body">
+                    <div class="media-title" style="position: relative;">Amba Risol</div>
                   </div>
-                  <div class="media-item">
-                    <div class="media-value">10</div>
-                    <div class="media-label">Tasks</div>
-                  </div>
-                </div>
-              </li>
-              <li class="media">
-                <img alt="image" class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-4.png">
-                <div class="media-body">
-                  <div class="media-title">Rido Hasan</div>
-                  <div class="text-job text-muted">Network Engineer</div>
-                </div>
-                <div class="badge badge-success mr-3">Romeo</div>
-                <div class="media-items">
-                  <div class="media-item">
-                    <div class="media-value">89%</div>
-                    <div class="media-label">Performance</div>
-                  </div>
-                  <div class="media-item">
-                    <div class="media-value">7</div>
-                    <div class="media-label">Tasks</div>
-                  </div>
-                </div>
-              </li>
-              <li class="media">
-                <img alt="image" class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-1.png">
-                <div class="media-body">
-                  <div class="media-title">Rusdi Ngawi</div>
-                  <div class="text-job text-muted">Network Engineer</div>
-                </div>
-                <div class="badge badge-success mr-3">Iota</div>
-                <div class="media-items">
-                  <div class="media-item">
-                    <div class="media-value">12%</div>
-                    <div class="media-label">Performance</div>
-                  </div>
-                  <div class="media-item">
-                    <div class="media-value">18</div>
-                    <div class="media-label">Tasks</div>
-                  </div>
-                </div>
-              </li>
-              <li class="media">
-                <img alt="image" class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-3.png">
-                <div class="media-body">
-                  <div class="media-title">Elyas Ajunge</div>
-                  <div class="text-job text-muted">Network Engineer</div>
-                </div>
-                <div class="badge badge-success mr-3">Bravo</div>
-                <div class="media-items">
-                  <div class="media-item">
-                    <div class="media-value">98%</div>
-                    <div class="media-label">Performance</div>
-                  </div>
-                  <div class="media-item">
-                    <div class="media-value">1</div>
-                    <div class="media-label">Tasks</div>
-                  </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+              </td>
+              <td>Sumatera</td>
+              <td>
+                <div class="badge badge-info mr-3">Romeo</div>
+              </td>
+              <td>78%</td>
+              <td>
+                <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
+                <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
+              </td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+      <!-- add modal -->
+      <div id="addModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add User</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>User</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Location</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Team</label>
+                <select class="form-control">
+                  <option>Bravo</option>
+                  <option>Defa</option>
+                  <option>Iota</option>
+                  <option>Romeo</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Performance</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
           </div>
         </div>
       </div>
+      <!-- end add modal -->
+
+      <!-- delete modal -->
+      <div id="deleteModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Delete</h4>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end delete modal -->
+
+      <!-- add modal -->
+      <div id="editModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit User</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>User</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Location</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Team</label>
+                <select class="form-control">
+                  <option>Bravo</option>
+                  <option>Defa</option>
+                  <option>Iota</option>
+                  <option>Romeo</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Performance</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end edit modal -->
+
+      <!-- show modal -->
+      <div id="showModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit User</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>User</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Location</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Team</label>
+                <select class="form-control">
+                  <option>Bravo</option>
+                  <option>Defa</option>
+                  <option>Iota</option>
+                  <option>Romeo</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Performance</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end show modal -->
       <footer class="main-footer">
         <div class="footer-left">
           Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauv.al/">Muhamad Nauval Azhar</a>
