@@ -447,38 +447,38 @@
   <!-- Page Specific JS File -->
   <script src="../assets/js/page/bootstrap-modal.js"></script>
   <script>
-    $(document).ready(function () {
-      // $('#checkBox').click(function () {
-      //   var formData = $('#taskTable').serialize();
-      //   console.log('Posting the following: ', formData);
+    // $(document).ready(function () {
+    //   // $('#checkBox').click(function () {
+    //   //   var formData = $('#taskTable').serialize();
+    //   //   console.log('Posting the following: ', formData);
 
-      //   $.ajax({
-      //     url: 'https://reqres.in/api/users?page=2',
-      //     type: 'GET',
-      //     success: function (data) {
-      //       console.log(res.data[0].email);
-      //       var rr = ''
-      //       $("#taskTable").html(
-      //         "<tr><td></td><td>" + res.data[0].email + "</td><td>" + res.data[1].email + "</td><td>" + res.data[2].email + "</td></tr>",
-      //       )
-      //     }
-      //   });
-      // });
+    //   //   $.ajax({
+    //   //     url: 'https://reqres.in/api/users?page=2',
+    //   //     type: 'GET',
+    //   //     success: function (data) {
+    //   //       console.log(res.data[0].email);
+    //   //       var rr = ''
+    //   //       $("#taskTable").html(
+    //   //         "<tr><td></td><td>" + res.data[0].email + "</td><td>" + res.data[1].email + "</td><td>" + res.data[2].email + "</td></tr>",
+    //   //       )
+    //   //     }
+    //   //   });
+    //   // });
 
-      $.ajax({
-        'url': "https://reqres.in/api/users?page=2",
-        'type': "GET",
-        'success': function (res) {
-          console.log(res.data[0].email);
-          var rr = ''
-          $("#taskTable").append(
-            "<tr><td></td><td>" + res.data[0].email + "</td><td>" + res.data[1].email + "</td><td>" + res.data[2].email + "</td></tr>",
-          )
+    //   $.ajax({
+    //     'url': "https://reqres.in/api/users?page=2",
+    //     'type': "GET",
+    //     'success': function (res) {
+    //       console.log(res.data[0].email);
+    //       var rr = ''
+    //       $("#taskTable").append(
+    //         "<tr><td></td><td>" + res.data[0].email + "</td><td>" + res.data[1].email + "</td><td>" + res.data[2].email + "</td></tr>",
+    //       )
 
-        }
+    //     }
 
-      })
-    });
+    //   })
+    // });
 
     // $(document).ready(function () {
     //   $('#checkBox').click(function () {
@@ -500,7 +500,35 @@
     //   });
     // });
 
+    $(document).ready(function () {
+      // Template Handlebars
+      var source = $("#task-template").html();
+      var template = Handlebars.compile(source);
+
+      $.ajax({
+        url: 'https://reqres.in/api/users?page=2',
+        type: 'GET',
+        success: function (data) {
+          // Asumsi data.tasks berisi array objek tugas
+          var html = template({ tasks: data.tasks });
+          $("#task-template tbody").html(html);
+        }
+      });
+    });
+
   </script>
+  <script id="task-template" type="text/x-handlebars-template"></script>
+    {{#each tasks}}
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>{{taskName}}</td>
+        <td>{{dueDate}}</td>
+        <td>{{category}}</td>
+        <td>{{status}}</td>
+        <td><i class="fas fa-trash"></i> <i class="fas fa-edit"></i></td>
+    </tr>
+    {{/each}}
+</script>
 </body>
 
 </html>
