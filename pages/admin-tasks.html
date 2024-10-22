@@ -184,7 +184,7 @@
                   <div class="table-responsive">
                     <table class="table table-striped" id="taskTable">
                       <tr>
-                        <th id="checkBox">
+                        <th>
                           <div class="custom-checkbox custom-control">
                             <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
                               class="custom-control-input" id="checkbox-all">
@@ -197,8 +197,8 @@
                         <th>Status</th>
                         <th>Action</th>
                       </tr>
-                      <tr>
-                        <td class="p-0 text-center">
+                      <tr id="task">
+                        <td class="p-0 text-center" id="checkBox">
                           <div class="custom-checkbox custom-control" id="checkBox">
                             <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
                               id="checkbox-1">
@@ -447,38 +447,97 @@
   <!-- Page Specific JS File -->
   <script src="../assets/js/page/bootstrap-modal.js"></script>
   <script>
-    // $(document).ready(function () {
-    //   // $('#checkBox').click(function () {
-    //   //   var formData = $('#taskTable').serialize();
-    //   //   console.log('Posting the following: ', formData);
+    $(document).ready(function () {
+      //   // $('#checkBox').click(function () {
+      //   //   var formData = $('#taskTable').serialize();
+      //   //   console.log('Posting the following: ', formData);
 
-    //   //   $.ajax({
-    //   //     url: 'https://reqres.in/api/users?page=2',
-    //   //     type: 'GET',
-    //   //     success: function (data) {
-    //   //       console.log(res.data[0].email);
-    //   //       var rr = ''
-    //   //       $("#taskTable").html(
-    //   //         "<tr><td></td><td>" + res.data[0].email + "</td><td>" + res.data[1].email + "</td><td>" + res.data[2].email + "</td></tr>",
-    //   //       )
-    //   //     }
-    //   //   });
-    //   // });
+      //   //   $.ajax({
+      //   //     url: 'https://reqres.in/api/users?page=2',
+      //   //     type: 'GET',
+      //   //     success: function (data) {
+      //   //       console.log(res.data[0].email);
+      //   //       var rr = ''
+      //   //       $("#taskTable").html(
+      //   //         "<tr><td></td><td>" + res.data[0].email + "</td><td>" + res.data[1].email + "</td><td>" + res.data[2].email + "</td></tr>",
+      //   //       )
+      //   //     }
+      //   //   });
+      //   // });
 
-    //   $.ajax({
-    //     'url': "https://reqres.in/api/users?page=2",
-    //     'type': "GET",
-    //     'success': function (res) {
-    //       console.log(res.data[0].email);
-    //       var rr = ''
-    //       $("#taskTable").append(
-    //         "<tr><td></td><td>" + res.data[0].email + "</td><td>" + res.data[1].email + "</td><td>" + res.data[2].email + "</td></tr>",
-    //       )
+      $.ajax({
+        'url': "https://reqres.in/api/users?page=2",
+        'type': "GET",
+        'success': function (res) {
+          console.log(res.data);
+          var rr = ''
+          $("#taskTable").append(
+            "<tr><td></td><td>" + res.data[0].first_name + "</td><td>" + res.data[0].last_name + "</td><td>" + res.data[0].email + "</td><td></td><td></td></tr>",
+            "<tr><td></td><td>" + res.data[2].first_name + "</td><td>" + res.data[2].last_name + "</td><td>" + res.data[2].email + "</td><td></td><td></td></tr>",
+          )
 
-    //     }
+        }
 
-    //   })
-    // });
+      })
+
+      // // Template Handlebars
+      // var source = $("#task-template").html();
+      // var template = Handlebars.compile(source);
+
+      // // Fungsi untuk memperbarui tabel
+      // function updateTable(data) {
+      //   var html = template({ tasks: data });
+      //   $("#task-table tbody").html(html);
+      // }
+
+      // // Ambil data dari API
+      // $.ajax({
+      //   url: 'https://reqres.in/api/users?page=2',
+      //   type: 'GET',
+      //   success: function (data) {
+      //     // Normalisasi data jika diperlukan
+      //     var normalizedData = data.map(function (item) {
+      //       return {
+      //         taskName: item.email, // Contoh mapping data
+      //         dueDate: '2023-11-24',
+      //         category: 'General',
+      //         status: 'Completed'
+      //       };
+      //     });
+
+      //     // Update tabel
+      //     updateTable(normalizedData);
+      //   }
+      // });
+
+      // function getData() {
+      //   $.ajax({
+      //     url: 'https://reqres.in/api/users?page=2',
+      //     method: 'GET',
+      //     success: function (data) {
+
+      //       console.log(res.data[0].email);
+      //       // var taskName = data.taskName;
+      //       // var dueDate = data.dueDate;
+      //       // var category = data.category;
+      //       // var status = data.status;
+
+      //       // Buat baris baru
+      //       var newRow = $('<tr>');
+      //       newRow.append('<td>' + res.data[0].email + '</td>');
+      //       newRow.append('<td>' + res.data[0].email + '</td>');
+      //       // ... dan seterusnya
+
+      //       // Tambahkan baris baru ke dalam tabel
+      //       $('#task').append(newRow);
+      //     }
+      //   });
+      // }
+
+      // // Panggil fungsi untuk mengambil data
+      // getData();
+
+    })
 
     // $(document).ready(function () {
     //   $('#checkBox').click(function () {
@@ -500,24 +559,58 @@
     //   });
     // });
 
-    $(document).ready(function () {
-      // Template Handlebars
-      var source = $("#task-template").html();
-      var template = Handlebars.compile(source);
+    // $(document).ready(function () {
+    //   // Template Handlebars
+    //    var source = $("#task-template").html();
+    //    var template = Handlebars.compile(source);
 
-      $.ajax({
-        url: 'https://reqres.in/api/users?page=2',
-        type: 'GET',
-        success: function (data) {
-          // Asumsi data.tasks berisi array objek tugas
-          var html = template({ tasks: data.tasks });
-          $("#task-template tbody").html(html);
-        }
-      });
-    });
+    //   $.ajax({
+    //     url: 'https://reqres.in/api/users?page=2',
+    //     type: 'GET',
+    //     success: function (data) {
+    //       // Asumsi data.tasks berisi array objek tugas
+    //       console.log(res.data[0].email);
+    //       var html = template({ tasks: data.tasks });
+    //       $("#task-template tbody").html(html);
+    //     }
+    //   });
+    // });
+
+    // $(document).ready(function () {
+    //   // URL API yang akan diambil datanya
+    //   var apiUrl = "https://reqres.in/api/users?page=2"; // Ganti dengan URL API Anda
+
+    //   // Fungsi untuk membuat baris tabel baru
+    //   function createTableRow(task) {
+    //     var newRow = $('<tr>');
+    //     newRow.append('<td><input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"></td>');
+    //     newRow.append('<td>' + task.name + '</td>');
+    //     newRow.append('<td>' + task.dueDate + '</td>');
+    //     newRow.append('<td>' + task.category + '</td>');
+    //     newRow.append('<td><div class="badge badge-' + task.statusClass + '">' + task.status + '</div></td>');
+    //     newRow.append('<td><i class="fa fa-trash mr-3"></i> <i class="fa fa-pen mr-3"></i> <i class="fa fa-eye"></i></td>');
+    //     return newRow;
+    //   }
+
+    //   // Mengambil data dari API dan mengisi tabel
+    //   $.ajax({
+    //     url: apiUrl,
+    //     type: 'GET',
+    //     success: function (data) {
+    //       // Kosongkan tabel kedua sebelum diisi
+    //       $('#taskTable tbody').html();
+
+    //       // Iterasi melalui data dan tambahkan baris baru
+    //       $.each(data.tasks, function (index, task) {
+    //         var newRow = createTableRow(task);
+    //         $('#taskTable tbody').append(newRow);
+    //       });
+    //     }
+    //   });
+    // });
 
   </script>
-  <script id="task-template" type="text/x-handlebars-template"></script>
+  <!-- <script id="task-template" type="checkBox"></script>
     {{#each tasks}}
     <tr>
         <td><input type="checkbox"></td>
@@ -528,7 +621,7 @@
         <td><i class="fas fa-trash"></i> <i class="fas fa-edit"></i></td>
     </tr>
     {{/each}}
-</script>
+</script> -->
 </body>
 
 </html>

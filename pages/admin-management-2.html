@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Profile &mdash; Stisla</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -88,13 +89,13 @@
               <a href="admin-dashboard.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
               <a href="admin-tasks.html" class="nav-link"><i class="fas fa-fire"></i><span>Tasks</span></a>
               <a href="admin-teams.html" class="nav-link"><i class="fas fa-user"></i><span>Team</span></a>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Management</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="admin-management-1.html">User</a></li>
-                  <li><a class="nav-link" href="admin-management-2.html">Categories</a></li>
-                </ul>
-              </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Management</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="admin-management-1.html">User</a></li>
+                <li><a class="nav-link" href="admin-management-2.html">Categories</a></li>
+              </ul>
+            </li>
             </li>
           </ul>
         </aside>
@@ -105,11 +106,25 @@
         <div class="card mt-4">
           <div class="card-header">
             <h4>Categories</h4>
-            <a href="#" class="btn btn-danger" style="margin-left: auto;" data-toggle="modal" data-target="#addModal">Create Category</a>
+            <a href="#" class="btn btn-danger" style="margin-left: auto;" data-toggle="modal"
+              data-target="#addModal">Create Category</a>
           </div>
           <div class="card-body">
-            <ul class="list-unstyled user-details list-unstyled-border list-unstyled-noborder">
-              <li class="media">
+            <ul class="list-unstyled user-details list-unstyled-border list-unstyled-noborder" id="categoryTask">
+              <!-- <li class="media">
+                <div class="media-body">
+                  <div class="media-title">Lorem Ipsum</div>
+                </div>
+                <div class="media-items">
+                  <div class="media-item">
+                    <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal"
+                      data-target="#deleteModal"></i>
+                    <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+                    <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
+                  </div>
+                </div>
+              </li> -->
+              <!-- <li class="media">
                 <div class="media-body">
                   <div class="media-title">Lorem Ipsum</div>
                 </div>
@@ -156,102 +171,90 @@
                     <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
                   </div>
                 </div>
-              </li>
-              <li class="media">
-                <div class="media-body">
-                  <div class="media-title">Lorem Ipsum</div>
-                </div>
-                <div class="media-items">
-                  <div class="media-item">
-                    <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal" data-target="#deleteModal"></i>
-                    <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
-                    <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
-                  </div>
-                </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
         <!-- add modal -->
-      <div id="addModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add Categories</h4>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label>Categories</label>
-                <input type="text" class="form-control">
+        <div id="addModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Add Categories</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Categories</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
-            </div>
           </div>
         </div>
-      </div>
-      <!-- end add modal -->
+        <!-- end add modal -->
 
-      <!-- delete modal -->
-      <div id="deleteModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Delete</h4>
-            </div>
-            <div class="modal-body">
-              <p>Are you sure?</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end delete modal -->
-
-      <!-- add modal -->
-      <div id="editModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Edit Categories</h4>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label>Categories</label>
-                <input type="text" class="form-control">
+        <!-- delete modal -->
+        <div id="deleteModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Delete</h4>
+              </div>
+              <div class="modal-body">
+                <p>Are you sure?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
-            </div>
           </div>
         </div>
-      </div>
-      <!-- end edit modal -->
+        <!-- end delete modal -->
 
-      <!-- show modal -->
-      <div id="showModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Show Cetagories</h4>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label>Categories</label>
-                <input type="text" class="form-control">
+        <!-- add modal -->
+        <div id="editModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Edit Categories</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Categories</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+          </div>
+        </div>
+        <!-- end edit modal -->
+
+        <!-- show modal -->
+        <div id="showModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Show Cetagories</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Categories</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- end show modal -->
+        <!-- end show modal -->
       </div>
       <footer class="main-footer">
         <div class="footer-left">
@@ -263,6 +266,98 @@
       </footer>
     </div>
   </div>
+
+  <script>
+    // $(document).ready(function () {
+    //   $.ajax({
+    //     'url': "https://reqres.in/api/unknown",
+    //     'type': "GET",
+    //     'success': function (res) {
+    //       console.log(res.data);
+    //       var rr = ''
+    //       $("#categoryTask").append(
+    //         // "<ul><li>" + res.data[0].name + "</li></ul>",
+    //         "<div>" + res.data[0].name + "</div>"
+    //       )
+
+    //     }
+
+    //   })
+    // })
+
+    // $(document).ready(function () {
+    //   $.ajax({
+    //     url: "https://reqres.in/api/users?page=2",
+    //     type: "GET",
+    //     success: function (response) {
+    //       // Periksa apakah response.data ada dan berisi data yang diharapkan
+    //       if (response.data && response.data.length > 0) {
+    //         // Iterasi melalui data dan tambahkan ke dalam list
+    //         $.each(response.data, function (index, user) {
+    //           $("#categoryTask").append(`<li>${user.email}</li>`);
+    //         });
+    //       } else {
+    //         console.error("Tidak ada data yang ditemukan atau format data tidak sesuai");
+    //       }
+    //     },
+    //     error: function (xhr, status, error) {
+    //       console.error("Terjadi kesalahan:", error);
+    //     }
+    //   });
+    // });
+
+    // $(document).ready(function () {
+    //   $.ajax({
+    //     url: "https://reqres.in/api/unknown",
+    //     type: "GET",
+    //     success: function (res) {
+    //       console.log(res.data); // Pastikan data ditampilkan di console
+
+    //       // Buat variabel untuk menyimpan data yang akan di-render
+    //       var rr = '';
+
+    //       // Gunakan loop untuk memproses semua data yang diterima
+    //       $.each(res.data, function (index, item) {
+    //         rr += "<li class='media'><div class='media-body'><div class='media-title'>" + item.name + "</div></div></li>";
+    //       });
+
+    //       // Masukkan data ke dalam elemen #categoryTask
+    //       $("#categoryTask").append(rr);
+    //     },
+    //     error: function (xhr, status, error) {
+    //       console.error("Error:", error);
+    //     }
+    //   });
+    // });
+
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://reqres.in/api/unknown",  // URL API
+        type: "GET",  // Metode HTTP
+        success: function (res) {
+          // Log data dari server untuk memastikan data diterima
+          console.log(res.data);
+
+          // Iterasi data dan tampilkan dalam elemen HTML
+          $("#categoryTask").append(
+              // `<li class="media">
+              //           <div class="media-body">
+              //               <div class="media-title">${res.data[0].name}</div>
+              //           </div>
+                        
+              //       </li>`
+              "<li><div>" + res.data[0].name + "</div></li>",
+              "<li><div>" + res.data[1].name + "</div></li>",
+          );
+        },
+        error: function (xhr, status, error) {
+          console.error("Terjadi kesalahan: " + error);
+        }
+      });
+    });
+
+
+  </script>
 
   <!-- General JS Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
