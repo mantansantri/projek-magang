@@ -340,14 +340,27 @@
 
           // Iterasi data dan tampilkan dalam elemen HTML
           $("#categoryTask").append(
-              // `<li class="media">
-              //           <div class="media-body">
-              //               <div class="media-title">${res.data[0].name}</div>
-              //           </div>
+            // `<li class="media">
+            //             <div class="media-body">
+            //                 <div class="media-title">${res.data[0].name}</div>
+            //             </div>
                         
-              //       </li>`
-              "<li><div>" + res.data[0].name + "</div></li>",
-              "<li><div>" + res.data[1].name + "</div></li>",
+            //         </li>
+            //         <li class="media">
+            //             <div class="media-body">
+            //                 <div class="media-title">${res.data[0].name}</div>
+            //                 <div class="media-item">
+            //                   <i class="fa fa-trash mr-3" style="color: crimson;" data-toggle="modal"
+            //                     data-target="#deleteModal"></i>
+            //                   <i class="fa fa-pen mr-3" style="color: crimson;" data-toggle="modal" data-target="#editModal"></i>
+            //                   <i class="fa fa-eye" style="color: crimson;" data-toggle="modal" data-target="#showModal"></i>
+            //       </div>
+            //             </div>
+                        
+            //         </li>`
+            "<li><div>" + res.data[0].name + "</div></li>",
+            "<li><div>" + res.data[1].name + "</div></li>",
+            "<li><div>" + res.data[2].name + "</div></li>",
           );
         },
         error: function (xhr, status, error) {
